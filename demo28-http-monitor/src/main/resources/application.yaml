@@ -1,0 +1,106 @@
+#主配置文件，配置了这个会优先读取里面的属性覆盖主配置文件的属性
+spring:
+  profiles:
+    active: dev
+  http:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      # 目录不存在抛异常
+      location: d:/test
+      max-file-size: 10mb # 注意和proteries大小写
+      max-request-size: 15mb
+  cache:
+    ehcache:
+      config: classpath:config/ehcache.xml
+  # email
+  mail:
+    host: smtp.exmail.qq.com
+    username: **
+    password: **
+    properties:
+      mail:
+        smtp:
+          auth: true
+      debug: true
+
+  session:
+    # spring session使用存储类型
+    store-type: none
+    redis:
+      # spring session刷新模式：默认on-save
+      flush-mode: on_save
+#      namespace:
+
+logging:
+  config: classpath:logback-demo.xml
+# session超时时间，单位秒
+#server.session.timeout=30
+server:
+  session:
+    timeout: 30
+---
+# dev
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:h2:file:D:/demo/demo_spring_boot;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE
+    username: root
+    password: root
+  # redis
+  redis:
+    timeout: 0
+    database: 0
+    password:
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+    host: localhost
+    port: 6379
+  # mogodb 配置
+  data:
+    mongodb:
+      host: 192.168.10.14
+      port: 27017
+  cache:
+    type: redis
+server:
+  port: 80
+
+# security and actuator config start
+endpoints:
+  sensitive: true
+  shutdown:
+    enabled: true
+# http://localhost/manager/beans
+# http://localhost/manager/health 健康
+# http://localhost/manager/configprops 配置
+# http://localhost/manager/mappings
+# http://localhost/manager/metrics 度量指标
+security:
+  basic:
+    path: /manager
+    enabled: true
+  user:
+    name: demo
+    password: demo
+management:
+  security:
+    roles: SUPERUSER
+  context-path: /manager
+# security and actuator config end
+
+---
+# test
+spring:
+  profiles: test
+server:
+  port: 8080
+
+---
+# prod
+spring:
+  profiles: prod
+server:
+  port: 8081

@@ -1,0 +1,19 @@
+#这个优先级较高
+
+#自定义配置
+demo:
+  secret: ${random.value} - yaml
+  number: ${random.int}
+  name: www.demo.com - yaml
+  desc: ${demo.name} is a domain name - yaml
+
+#端口
+server:
+  port: 8090
+
+
+#spring jsckson
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Chongqing

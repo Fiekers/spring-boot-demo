@@ -1,0 +1,12 @@
+#这个优先级较高
+
+#自定义配置
+demo:
+  secret: ${random.value} - yaml
+  number: ${random.int}
+  name: www.demo.com - yaml
+  desc: the domain is ${demo.name} - yaml
+
+#端口
+server:
+  port: 90
