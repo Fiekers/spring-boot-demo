@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ex.demo</groupId>
+	<artifactId>spring-boot-fikers</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>demo1-restfull-api</module>
+		<module>demo2-config-filer-properties</module>
+		<module>demo3-config-filer-yaml</module>
+        <module>demo4-multi-env-config</module>
+        <module>demo5-multi-env-config</module>
+        <module>demo6-log-back</module>
+        <module>demo7-log4j</module>
+        <module>demo8-freemarker</module>
+		<module>demo9-thymeleaf</module>
+        <module>demo10-jsp</module>
+		<module>demo11-error-handle</module>
+        <module>demo12-servlets-filters-listeners</module>
+		<module>demo13-cors</module>
+        <module>demo14-file-upload</module>
+        <module>demo15-jdbcTemplate</module>
+        <module>demo16-spring-data-jpa</module>
+        <module>demo17-transaction</module>
+		<module>demo18-h2-orm</module>
+		<module>demo19-nosql-redis</module>
+		<module>demo20-nosql-mongodb</module>
+        <module>demo21-Caching-EhCache</module>
+		<module>demo22-Caching-Redis</module>
+        <module>demo23-JMS-ActiveMQ</module>
+        <module>demo24-AMQP-RabbitMQ</module>
+        <module>demo25-proxy-agent</module>
+        <module>demo26-send-eMail-polling</module>
+        <module>demo27-redis-colony</module>
+        <module>demo28-http-monitor</module>
+        <module>demo29-mybatis</module>
+		<module>demo30-druid</module>
+		<module>demo31-Swagger</module>
+	</modules>
+
+	<name>fikers study</name>
+	<description>spring boot 个人个人示例</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.13.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
